@@ -29,26 +29,28 @@ brew install redis
 
 ## Redis CLI
 
-| Command               | Description                                                                                                       |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `redis-server`        | Starts the redis server on your machine                                                                           |
-| `redis-cli`           | Starts the CLI                                                                                                    |
-| `quit`                | If executed in the CLI, it quits the CLI                                                                          |
-| `SET name John`       | Creates an entry `"name": "John"`                                                                                 |
-| `GET name`            | Returns the value of the key `"name"`                                                                             |
-| `DEL name`            | Deletes the entry with key `"name"`                                                                               |
-| `EXISTS name`         | Checks if the entry with key `"name"` exists, returns 1 (true) or 0 (false)                                       |
-| `KEYS *`              | Returns a list of all the keys                                                                                    |
-| `FLUSHALL`            | Deletes everything from the database                                                                              |
-| `TTL name`            | Returns the **time to live*** (in seconds) of the entry with key `"name"`. `-1` means the entry has no expiration |
-| `EXPIRE name 10`      | Sets the time to live of the entry with key `"name"` to 10 seconds                                                |
-| `SETEX name 10 John`  | Creates an entry `"name": "John"` and sets its **time to live** to 10 seconds                                     |
-| `LPUSH friends John`  | Creates an entry `"friends"` that has `"John"` inside of the array                                                |
-| `LRANGE friends 0 -1` | Returns a list of items in the array `"friends"`                                                                  |
-| `LPUSH friends Sally` | Appends the item `"Sally"` on the "right" of the array `"friends"`                                                |
-| `LPOP friends`        | Removes the first item of the array `"friends"` and returns it                                                    |
+| Command                         | Description                                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `redis-server`                  | Starts the redis server on your machine                                                                           |
+| `redis-cli`                     | Starts the CLI                                                                                                    |
+| `quit`                          | If executed in the CLI, it quits the CLI                                                                          |
+| `SET name John`                 | Creates an entry `"name": "John"`                                                                                 |
+| `GET name`                      | Returns the value of the key `"name"`                                                                             |
+| `DEL name`                      | Deletes the entry with key `"name"`                                                                               |
+| `EXISTS name`                   | Checks if the entry with key `"name"` exists, returns 1 (true) or 0 (false)                                       |
+| `KEYS *`                        | Returns a list of all the keys                                                                                    |
+| `FLUSHALL`                      | Deletes everything from the database                                                                              |
+| `TTL name`                      | Returns the **time to live*** (in seconds) of the entry with key `"name"`. `-1` means the entry has no expiration |
+| `EXPIRE name 10`                | Sets the time to live of the entry with key `"name"` to 10 seconds                                                |
+| `SETEX name 10 John`            | Creates an entry `"name": "John"` and sets its **time to live** to 10 seconds                                     |
+| `LPUSH friends John`            | Creates an entry `"friends"` that has `"John"` inside of the array                                                |
+| `LRANGE friends 0 -1`           | Returns a list of items in the array `"friends"`                                                                  |
+| `LPUSH friends Sally`           | Appends the item `"Sally"` on the "right" of the array `"friends"`                                                |
+| `LPOP friends`                  | Removes the first item of the array `"friends"` and returns it                                                    |
+| `SADD hobbies "playing guitar"` | Creates a **set*** `"hobbies"` and adds the member `"playing guitar"`                                             |
 
 > *Time to live (TTL) is the time that an object is stored in a caching system before it's deleted or refreshed.
+> *Sets cannot have duplicate members
 
 
 ## Redis in NodeJS
