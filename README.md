@@ -48,6 +48,13 @@ brew install redis
 | `LPUSH friends Sally`           | Appends the item `"Sally"` on the "right" of the array `"friends"`                                                |
 | `LPOP friends`                  | Removes the first item of the array `"friends"` and returns it                                                    |
 | `SADD hobbies "playing guitar"` | Creates a **set*** `"hobbies"` and adds the member `"playing guitar"`                                             |
+| `SMEMBERS hobbies`              | Returns a list of items in the set `"hobbies"`                                                                    |
+| `SREM hobbies "playing guitar"` | Removes the item `"playing guitar"` from the set `"hobbies"` and returns 1 if successful, 0 otherwise             |
+| `HSET person name John`         | Create a hash `"person"` with an entry `"name": "John"`                                                           |
+| `HGET person name`              | Returns the value of the entry with key `"name"` in the hash `"person"`                                           |
+| `HGETALL person`                | Returns all the pairs key, value of the hash `"person"`                                                           |
+| `HDEL person name`              | Deletes the key, value pair with key `"name"` in the hash `"person"`                                              |
+| `HEXISTS person name`           | Checks if the entry with key `"name"` exists in the hash `"person"`, returns 1 (true) or 0 (false)                |
 
 > *Time to live (TTL) is the time that an object is stored in a caching system before it's deleted or refreshed.
 > *Sets cannot have duplicate members
